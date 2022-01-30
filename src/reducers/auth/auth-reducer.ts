@@ -3,6 +3,7 @@ import {
   LOGIN_USER_REQUEST,
   LOGIN_USER_SUCCESS
 } from '../../actions/auth';
+import Cookies from 'js-cookie';
 
 export interface AuthState {
   loggin: boolean;
@@ -10,9 +11,11 @@ export interface AuthState {
   user?: string;
 }
 
+const authCookie = Cookies.get('accessToken');
+
 const initialState: AuthState = {
   loggin: false,
-  logged: false,
+  logged: !!authCookie,
   user: ''
 };
 
