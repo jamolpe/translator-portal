@@ -1,4 +1,4 @@
-import { API_BASE, handleRequest } from './utils';
+import { handleRequest } from './utils';
 
 export interface UserData {
   email: string;

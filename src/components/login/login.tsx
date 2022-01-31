@@ -16,7 +16,7 @@ import { UserData } from '../../services/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 interface LoginProps {
-  loginUser: (userData: UserData) => Promise<void>;
+  loginUser: (userData: UserData) => void;
 }
 interface stateType {
   from: { pathname: string };

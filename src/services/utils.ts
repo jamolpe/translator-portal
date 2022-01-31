@@ -9,5 +9,5 @@ export const handleRequest = (response: Response): ApiResponse<any> => {
   if (!response.ok) {
     throw new Error('request error happened');
   }
-  return { body: response.body, code: response.status };
+  return { body: response.json(), code: response.status };
 };

@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { AuthState } from '../../reducers/auth/auth-reducer';
 import './topbar.scss';
 
 interface TopBarState {
@@ -17,7 +16,11 @@ const TopBar = ({ logged }: TopBarState) => (
           Login
         </Link>
       )}
-      {logged && <Link to="/projects">my proyects</Link>}
+      {logged && (
+        <Link className="linkto" to="/projects">
+          my proyects
+        </Link>
+      )}
     </nav>
   </>
 );
