@@ -1,11 +1,15 @@
 @import '../../index.scss';
 
-.top-bar {
+.top-bar-main {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   z-index: 999;
   position: fixed;
   top: 0;
+  width: 100%;
+}
+
+.top-bar {
   width: 100%;
   background-color: $color-background;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
@@ -27,8 +31,10 @@
 }
 
 @media (max-width: $mobile-min) {
-  .top-bar {
+  .top-bar-main {
     flex-direction: column-reverse;
+  }
+  .top-bar {
     background-color: $color-background;
   }
 }

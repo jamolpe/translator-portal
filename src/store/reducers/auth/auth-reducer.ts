@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie';
 import { createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../../store';
-import { loginUser } from './auth-actions';
+import { loadUserInfo, loginUser } from './auth-actions';
 
 export interface AuthState {
   loggin: boolean;
@@ -22,7 +22,7 @@ export const authSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(loginUser.pending, (state, action) => {
+    builder.addCase(loginUser.pending, (state) => {
       state.loggin = true;
       state.logged = false;
       state.user = '';
@@ -30,11 +30,20 @@ export const authSlice = createSlice({
     builder.addCase(loginUser.fulfilled, (state, action) => {
       state.loggin = false;
       state.logged = true;
-      state.user = '';
+      state.user = action.payload.email;
     });
-    builder.addCase(loginUser.rejected, (state, action) => {
+    builder.addCase(loginUser.rejected, (state) => {
       state.loggin = false;
       state.logged = false;
+      state.user = '';
+    });
+    builder.addCase(loadUserInfo.pending, (state) => {
+      state.user = '';
+    });
+    builder.addCase(loadUserInfo.fulfilled, (state, action) => {
+      state.user = action.payload.email;
+    });
+    builder.addCase(loadUserInfo.rejected, (state) => {
       state.user = '';
     });
   }

@@ -7,6 +7,7 @@ import { useAppDispatch } from '../../store/hooks';
 import { loginUser } from '../../store/reducers/auth/auth-actions';
 import { authSelector } from '../../store/reducers/auth/auth-reducer';
 import Logincontainer from '../login/logincontainer';
+import ListAllProjects from '../projects/listall-container';
 import './maincontainer.scss';
 
 const MainContainer = () => {
@@ -14,8 +15,9 @@ const MainContainer = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div>
+    <>
       <TopBar logged={logged} />
+
       <div className="body-content body-container">
         <Routes>
           <Route path="/" element={<div> main component</div>} />
@@ -32,12 +34,15 @@ const MainContainer = () => {
             />
           )}
           {logged && (
-            <Route path="/welcome" element={<div>welcome {user}</div>} />
+            <>
+              <Route path="/welcome" element={<div>welcome {user}</div>} />
+              <Route path="/projects" element={<ListAllProjects />} />
+            </>
           )}
           <Route path="*" element={<div>nothing to see here</div>} />
         </Routes>
       </div>
-    </div>
+    </>
   );
 };
 

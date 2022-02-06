@@ -1,10 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from './reducers/auth/auth-reducer';
+import projecReducer from './reducers/project/project-reducer';
+import statusReducer from './reducers/status/status-reducer';
 import logger from 'redux-logger';
 
 export const store = configureStore({
   reducer: {
-    auth: authReducer
+    auth: authReducer,
+    project: projecReducer,
+    status: statusReducer
   },
   middleware:
     process.env.ENV === 'prod'
