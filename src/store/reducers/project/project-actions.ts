@@ -17,6 +17,7 @@ export const createProjectAction = createAsyncThunk(
     try {
       const response = await createProjectCall(projectData);
       thunkAPI.dispatch(reportOk('Project Created'));
+      thunkAPI.dispatch(loadAllProjectAction());
       return response.body;
     } catch (error) {
       thunkAPI.dispatch(reportKo('Error creating project'));

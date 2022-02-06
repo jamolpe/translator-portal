@@ -7,7 +7,9 @@ import { useAppDispatch } from '../../store/hooks';
 import { loginUser } from '../../store/reducers/auth/auth-actions';
 import { authSelector } from '../../store/reducers/auth/auth-reducer';
 import Logincontainer from '../login/logincontainer';
-import ListAllProjects from '../projects/listall-container';
+import CreateProjectContainer from '../project/create-container';
+import ListAllProjects from '../project/listall-container';
+import PTranslationsContainer from '../translation/ptranslations-container';
 import './maincontainer.scss';
 
 const MainContainer = () => {
@@ -37,6 +39,14 @@ const MainContainer = () => {
             <>
               <Route path="/welcome" element={<div>welcome {user}</div>} />
               <Route path="/projects" element={<ListAllProjects />} />
+              <Route
+                path="/project/create"
+                element={<CreateProjectContainer />}
+              />
+              <Route
+                path="/project/:projectId"
+                element={<PTranslationsContainer />}
+              />
             </>
           )}
           <Route path="*" element={<div>nothing to see here</div>} />
