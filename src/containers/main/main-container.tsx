@@ -8,7 +8,7 @@ import { loginUser } from '../../store/reducers/auth/auth-actions';
 import { authSelector } from '../../store/reducers/auth/auth-reducer';
 import Logincontainer from '../login/logincontainer';
 import CreateProjectContainer from '../project/create-container';
-import ListAllProjects from '../project/listall-container';
+import ListAllProjectsContainer from '../project/listallproject-container';
 import PTranslationsContainer from '../translation/ptranslations-container';
 import './maincontainer.scss';
 
@@ -38,7 +38,7 @@ const MainContainer = () => {
           {logged && (
             <>
               <Route path="/welcome" element={<div>welcome {user}</div>} />
-              <Route path="/projects" element={<ListAllProjects />} />
+              <Route path="/projects" element={<ListAllProjectsContainer />} />
               <Route
                 path="/project/create"
                 element={<CreateProjectContainer />}

@@ -9,7 +9,7 @@ import { loadAllProjectAction } from '../../store/reducers/project/project-actio
 import { projectSelector } from '../../store/reducers/project/project-reducer';
 import './listallcontainer.scss';
 
-const ListAllProjects = () => {
+const ListAllProjectsContainer = () => {
   const { projects } = useSelector(projectSelector);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -43,4 +43,4 @@ const ListAllProjects = () => {
   );
 };
 
-export default React.memo(ListAllProjects);
+export default React.memo(ListAllProjectsContainer);
