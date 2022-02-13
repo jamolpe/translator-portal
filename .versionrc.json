@@ -10,8 +10,8 @@
     { "type": "perf", "hidden": true },
     { "type": "test", "hidden": true }
   ],
-  "commitUrlFormat": "https://github.com/jamolpe/translator-portal/translator_portal/commit/{{hash}}",
-  "compareUrlFormat": "https://github.com/jamolpe/translator-portal/translator_portal/compare/{{previousTag}}...{{currentTag}}",
+  "commitUrlFormat": "https://github.com/jamolpe/translator-portal/commit/{{hash}}",
+  "compareUrlFormat": "https://github.com/jamolpe/translator-portal/compare/{{previousTag}}...{{currentTag}}",
   "issuePrefixes": ["#"],
-  "issueUrlFormat": "https://github.com/jamolpe/translator-portal/translator_portal/issues/{{id}}"
+  "issueUrlFormat": "https://github.com/jamolpe/translator-portal/issues/{{id}}"
 }
